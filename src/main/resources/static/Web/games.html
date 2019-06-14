@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Salvo</title>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+    </head>
+<body>
+    <main id="app">
+
+        <h1 class="title">Salvo Battleship</h1>
+
+        <div class="flex-container">
+            <table id="games-table"></table>
+            
+            <table id="leaderboard"></table>
+        </div>
+
+        <div v-show="!logged">
+                <h4>Login</h4>
+                <form id="login-form" onsubmit="return false">
+                    <label>Email: <input type="text" name="username" id="login-username" required></label><br>
+                    <label>Password: <input type="password" name="password" id="login-pwd" required></label>
+                    <input type="submit" value="Log in">
+                </form>
+                <h4>Or Signup</h4>
+                <form id="signup-form" onsubmit="return false">
+                    <label>Full Name: <input type="text" name="name" id="signup-name" required></label><br>
+                    <label>Email: <input type="text" name="username" id="signup-username" required></label><br>
+                    <label>Password: <input type="password" name="password" id="signup-pwd" required></label>
+                    <input type="submit" value="Sign up">
+                </form>
+        </div>
+        
+
+        <div v-show="logged">
+            <h2>Logged as: <b>{{user.email}}</b></h2>
+            <form id="logout-form" onsubmit="return false">
+                <input type="submit" value="Log out">
+            </form>
+        </div>
+
+    </main>
+        
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="dist/jquery-ui.min.js"></script>
+    <script src="dist/gridstack.js"></script>
+    <script src="dist/gridstack.jQueryUI.js"></script>
+    <script src="dist/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>    
+    <script src="scripts/games.js"></script>
+</body>
+</html>
